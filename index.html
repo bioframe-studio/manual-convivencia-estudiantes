@@ -247,7 +247,9 @@ body[data-nivel="peq"] .pagina { font-size: calc(var(--fs) * var(--escala) * var
   border: 2px solid var(--c-cl); background: #fff; border-radius: .7em; padding: .4em .25em;
   cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: .15em;
   font-weight: 700; font-size: .78em; line-height: 1.1; text-align: center;
+  min-width: 0; overflow-wrap: break-word; hyphens: manual;
 }
+.mosaico button > :not(.emoji) { max-width: 100%; }
 .mosaico button .emoji { font-size: 1.7em; }
 .mosaico button.activo { border-color: var(--c); background: var(--c-cl); box-shadow: 0 0 0 2px var(--c) inset; }
 .panel-info { background: var(--c-cl); border-radius: .7em; padding: .55em .8em; margin-top: .5em; min-height: 4.2em; }
@@ -952,18 +954,18 @@ ${nv(vf('El Manual de Convivencia sirve solo para castigar.', false, 'Sirve para
 (function () {
   const E = [
     ['der', '⚖️', 'Derechos humanos', 'Tu dignidad es lo más importante. Todos tienen derecho a aprender y a estar bien.', 'La dignidad humana es el eje de las relaciones. La Institución garantiza el acceso, la permanencia y la promoción de todos sus estudiantes.'],
-    ['dif', '🎯', 'Diferencial', 'Cada persona es distinta y algunas necesitan apoyos especiales.', 'Reconoce las vulnerabilidades y formas de discriminación que afectan a grupos específicos y ajusta la atención a sus necesidades.'],
+    ['dif', '🎯', 'Diferen&shy;cial', 'Cada persona es distinta y algunas necesitan apoyos especiales.', 'Reconoce las vulnerabilidades y formas de discriminación que afectan a grupos específicos y ajusta la atención a sus necesidades.'],
     ['gen', '👫', 'Género y diversidad', 'Niñas y niños tienen las mismas oportunidades. Respetamos a todas las personas.', 'Igualdad de oportunidades entre mujeres y hombres, respeto por la diversidad sexual y las identidades de género, y prevención de las violencias basadas en el género.'],
     ['etn', '🌎', 'Étnico', 'Valoramos las culturas indígenas, afrodescendientes y todas las culturas.', 'Respeta y valora la diversidad étnica y cultural de los pueblos indígenas y las comunidades afrodescendientes.'],
     ['eta', '🧒', 'Etario (edad)', 'Cada edad tiene sus necesidades: no es lo mismo tener 6 que 16 años.', 'Atiende las necesidades de cada etapa de la vida: física, emocional, social y cognitiva.'],
-    ['ter', '🏘️', 'Territorial', 'Vivir en la ciudad o en el campo es distinto, y el colegio lo tiene en cuenta.', 'Reconoce las diferencias entre las dinámicas urbanas y rurales y adapta las acciones a cada realidad.'],
+    ['ter', '🏘️', 'Territo&shy;rial', 'Vivir en la ciudad o en el campo es distinto, y el colegio lo tiene en cuenta.', 'Reconoce las diferencias entre las dinámicas urbanas y rurales y adapta las acciones a cada realidad.'],
     ['con', '♿', 'Por condición', 'Los estudiantes con discapacidad o con talentos especiales reciben los apoyos que necesitan.', 'Igualdad real para estudiantes con discapacidad, trastornos del aprendizaje o de la conducta, y capacidades o talentos excepcionales.'],
-    ['mig', '🧳', 'Migratorio', 'Si vienes de otro lugar o de otro país, aquí eres bienvenido.', 'Garantiza el acceso y la protección de estudiantes migrantes, refugiados o desplazados, y previene la xenofobia.'],
+    ['mig', '🧳', 'Migra&shy;torio', 'Si vienes de otro lugar o de otro país, aquí eres bienvenido.', 'Garantiza el acceso y la protección de estudiantes migrantes, refugiados o desplazados, y previene la xenofobia.'],
     ['inc', '🧩', 'Inclusivo', 'Todos cabemos. Nadie se queda por fuera.', 'La diversidad es una condición de todas las personas, no una etiqueta. Se eliminan las barreras para que todos aprendan con calidad.'],
-    ['par', '🗳️', 'Participativo', 'Tu voz cuenta: puedes opinar y proponer.', 'Cada integrante puede representar sus intereses, opinar, proponer y participar en las decisiones.'],
+    ['par', '🗳️', 'Partici&shy;pativo', 'Tu voz cuenta: puedes opinar y proponer.', 'Cada integrante puede representar sus intereses, opinar, proponer y participar en las decisiones.'],
     ['dep', '🎨', 'Deportivo y artístico', 'Si representas al colegio en deportes o en arte, te ayudan a ponerte al día.', 'Procesos académicos flexibles para quienes se ausentan por torneos, muestras o entrenamientos.'],
-    ['res', '🌱', 'Restaurativo', 'Cuando algo sale mal, lo importante es reparar el daño y volver a estar bien.', 'Privilegia la reparación del daño y la reconstrucción de los vínculos sobre la sanción, mediante el diálogo y la mediación.'],
-    ['soc', '💚', 'Socioemocional', 'Aprendemos a reconocer y manejar nuestras emociones.', 'Fortalece las competencias para gestionar emociones, pensamientos y comportamientos, cuidar la salud mental y construir relaciones sanas.']
+    ['res', '🌱', 'Restau&shy;rativo', 'Cuando algo sale mal, lo importante es reparar el daño y volver a estar bien.', 'Privilegia la reparación del daño y la reconstrucción de los vínculos sobre la sanción, mediante el diálogo y la mediación.'],
+    ['soc', '💚', 'Socio&shy;emocional', 'Aprendemos a reconocer y manejar nuestras emociones.', 'Fortalece las competencias para gestionar emociones, pensamientos y comportamientos, cuidar la salud mental y construir relaciones sanas.']
   ];
   const botones = E.map(e => `<button type="button" data-sel="${e[0]}"><span class="emoji">${e[1]}</span>${e[2]}</button>`).join('');
   const paneles = E.map(e => `<div class="panel-info" data-panel="${e[0]}"><h3>${e[1]} ${e[2]}</h3>${nv('<p>' + e[3] + '</p>', '<p>' + e[4] + '</p>')}</div>`).join('');
